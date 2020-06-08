@@ -1,0 +1,25 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+import { HomeComponent } from './Employee/home';
+import { LoginComponent } from './login';
+import { ApplyforleaveComponent } from './Employee/applyforleave/applyforleave.component';
+import { AuthGuard } from './_helpers';
+import { MyleavesComponent } from './Employee/myleaves/myleaves.component';
+import { CheckleavesComponent } from './Employee/checkleaves/checkleaves.component';
+
+const routes: Routes = [
+    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'login', component: LoginComponent },
+    { path: 'applyforleave', component: ApplyforleaveComponent},
+    {path: 'my-leaves', component: MyleavesComponent},
+    {path: 'check-leaves', component: CheckleavesComponent},
+    // otherwise redirect to home
+    { path: '**', redirectTo: '' }
+];
+
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }

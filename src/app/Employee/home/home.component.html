@@ -1,0 +1,24 @@
+﻿<div class="card mt-4">
+    <h4 class="card-header"> My Profile</h4>
+    <div class="card-body">
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <div class="container">
+            <h5>Welcome {{currentuser.firstName}}</h5>
+            <dl class="list">
+                <dt>EMP ID</dt>
+              <dd>{{ currentuser.id }}</dd>
+              <dt>Name</dt>
+              <dd>{{ currentuser.firstName }} {{ currentuser.lastName }}</dd>
+              <dt>Department</dt>
+              <dd>{{ currentuser.department }}</dd>
+              <dt>Manager</dt>
+              <dd>{{ currentuser.manager }}</dd>
+            </dl>
+          </div>
+   <div> </div>
+       <!-- <ul *ngIf="users">
+            <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}} {{user.role}}</li>
+        </ul>-->
+     
+    </div>
+</div>

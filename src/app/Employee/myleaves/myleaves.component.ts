@@ -7,6 +7,7 @@ export class MyList {
   type: string;
   status: string;
 }
+const state=false;
 
 const data: MyList[] = [
  {sno: 1, appliedOn: '1/05/2020', from: '5/05/2020', to: '10/05/2020', type: 'paid',status:'approved'},

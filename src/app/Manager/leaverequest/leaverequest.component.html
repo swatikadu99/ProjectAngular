@@ -1,0 +1,37 @@
+  <div class="container" style="margin-top: 20px;">
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-md-6" >
+        <div>
+          <input type="text" [(ngModel)]="term" placeholder="Search User"  class="form-control">
+      </div>  
+      </div>
+    </div><br>
+    <!--<div class ="alert alert-success" role = "alert" *ngIf='! flag'>
+      Deleted successfully!
+    </div>-->
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>Name</th>
+          <th>Dept</th>
+          <th>Manage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{item.empId}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.dept}}</td>
+          <td>
+              <a class="btn btn-primary btn-sm" routerLink="/view-request">View</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+   
+  
+  
+  
+  

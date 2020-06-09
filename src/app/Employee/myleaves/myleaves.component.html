@@ -2,7 +2,7 @@
     <div class="row" style="margin-top: 20px;">
       <div class="col-md-6" >
         <div>
-          <input type="text" [(ngModel)]="term" placeholder="Search User"  class="form-control">
+          <input type="text" [(ngModel)]="term" placeholder="Search"  class="form-control">
       </div>  
       </div>
     </div><br>
@@ -16,16 +16,21 @@
           <th>To</th>
           <th>Type</th>
           <th>Status</th>
+          <th>Manage</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of data">
-          <td>{{item.sno}}</td>
+        <tr >
+          <td>1</td>
           <td>{{item.appliedOn}}</td>
           <td>{{item.from}}</td>
           <td>{{item.to}}</td>
           <td>{{item.type}}</td>
-          <td>{{item.status}}</td>        
+          <td>pending</td> 
+          <td>
+           <!-- <button class="btn btn-warning btn-sm" style="margin-right:30px" [disabled]="!state" >Edit</button>-->
+            <button class="btn btn-danger btn-sm" [disabled]="!state">Delete</button>
+          </td>        
         </tr>
       </tbody>
     </table>

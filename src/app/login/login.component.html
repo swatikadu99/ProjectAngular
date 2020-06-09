@@ -5,6 +5,7 @@
         Password: test
     </div>
    -->
+<span style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
     <div class="card">
         <h4 class="card-header">Employee Leave Manager</h4>
         <div class="card-body">
@@ -36,13 +37,16 @@
            <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
             <div *ngIf="f.role.errors.required">Role is required</div>
         </div>
-                </div>
-                <button [disabled]="loading" class="btn btn-primary">
+            </div>
+            <div style="text-align: center;"> 
+                <button [disabled]="loading" class="btn btn-primary" style="width: 450px;" >
                     <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                     Login
                 </button>
+                </div>
                 <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
             </form>
         </div>
     </div>
-</div>
+</span>
+    

@@ -1,15 +1,28 @@
 ﻿<!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/">{{currentUser.role}}</a>
-        <a class="nav-item nav-link" routerLink="applyforleave" >Apply for Leave</a> 
-        <a class="nav-item nav-link" routerLink="my-leaves">My Leaves</a>
-        <a class="nav-item nav-link" routerLink="check-leaves">Leave record</a>
-        <a class="nav-item nav-link" (click)="logout()">Logout</a>
-    </div>
-</nav>
+<div *ngIf="flag">
+    <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" routerLink="/">{{currentUser.role}}</a>
+            <a class="nav-item nav-link" routerLink="applyforleave" >Apply for Leave</a> 
+            <a class="nav-item nav-link" routerLink="my-leaves">My Leaves</a>
+            <a class="nav-item nav-link" routerLink="check-leaves">Leave record</a>
+            <a class="nav-item nav-link" (click)="logout()">Logout</a>
+        </div>
+    </nav>
+</div>
 
-<!-- main app container -->
+<div *ngIf="!flag">
+    <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" routerLink="/manager-home">{{currentUser.role}}</a>
+            <a class="nav-item nav-link" routerLink="leave-request">Leave request</a>
+          <!--<a class="nav-item nav-link" routerLink="manager-home">Manager-Home</a>-->  
+            <a class="nav-item nav-link" (click)="logout()">Logout</a>
+        </div>
+    </nav>
+</div>
+
+<!-- main app container-->
 <div class="container">
     <router-outlet></router-outlet>
 </div>

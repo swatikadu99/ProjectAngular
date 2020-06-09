@@ -7,6 +7,9 @@ import { ApplyforleaveComponent } from './Employee/applyforleave/applyforleave.c
 import { AuthGuard } from './_helpers';
 import { MyleavesComponent } from './Employee/myleaves/myleaves.component';
 import { CheckleavesComponent } from './Employee/checkleaves/checkleaves.component';
+import { LeaverequestComponent } from './Manager/leaverequest/leaverequest.component';
+import {ViewrequestComponent} from './Manager/viewrequest/viewrequest.component';
+import { ManagerhomeComponent } from './Manager/managerhome/managerhome.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -14,8 +17,11 @@ const routes: Routes = [
     { path: 'applyforleave', component: ApplyforleaveComponent},
     {path: 'my-leaves', component: MyleavesComponent},
     {path: 'check-leaves', component: CheckleavesComponent},
-    // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    {path: 'leave-request', component:LeaverequestComponent},
+    {path:'view-request', component: ViewrequestComponent},
+    {path:'manager-home', component: ManagerhomeComponent}
+        // otherwise redirect to home
+    //{ path: '**', redirectTo: '' }
 ];
 
 @NgModule({

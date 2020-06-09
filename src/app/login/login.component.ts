@@ -54,7 +54,12 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.router.navigate(['/']);
+                    if(this.f.role.value=="Employee"){
+                        this.router.navigate(['/']);
+                     }
+                     if(this.f.role.value=="Manager"){
+                         this.router.navigate(['/manager-home'])
+                     }
                 },
                 error => {
                     this.error = error;
